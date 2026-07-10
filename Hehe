@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow-x:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    position:relative;
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    color:rgba(255,255,255,.7);
+    animation:float 10s linear infinite;
+    font-size:25px;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+.container{
+    width:90%;
+    max-width:800px;
+    background:rgba(255,255,255,.95);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    text-align:center;
+    z-index:2;
+}
+
+h1{
+    color:#ff4f81;
+    margin-bottom:20px;
+}
+
+.message{
+    text-align:left;
+    line-height:1.8;
+    color:#444;
+    font-size:18px;
+    max-height:500px;
+    overflow:auto;
+    white-space:pre-wrap;
+}
+
+footer{
+    margin-top:25px;
+    color:#ff4f81;
+    font-size:15px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ For You ❤️</h1>
+
+    <div class="message">
+PASTE YOUR LONG MESSAGE HERE.
+
+You can write as much as you want.
+
+This box automatically supports long paragraphs and scrolling.
+
+Replace this text with your own heartfelt message.
+    </div>
+
+    <footer>
+        Made with ❤️
+    </footer>
+</div>
+
+<script>
+for(let i=0;i<50;i++){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(5+Math.random()*8)+"s";
+    heart.style.fontSize=(15+Math.random()*30)+"px";
+    heart.style.animationDelay=Math.random()*5+"s";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
